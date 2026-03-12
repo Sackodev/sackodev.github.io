@@ -1,8 +1,36 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css">
+    <style>
+      .navbar{
+        text-align: center;
+        margin: 0 auto;
+        font-size: 24px;
+      .header{
+        animation: headeranim 2s ease infinite;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 36px;
+      }
+      @keyframes headeranim{
+        0%{
+          transform: rotate(12deg);
+        }
+        50%{
+          transform: rotate(-12deg);
+        }
+        100%{
+          transform: rotate(12deg);
+        }
+      }
+          
+    </style>
   </head>
   <body>
-    <p> Cool website thing!!! </p>
+    <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="games.html">Games</a>
+    <div>
+    <div class="header"> Cool website thing!!! </div>
   </body>
 </html>
