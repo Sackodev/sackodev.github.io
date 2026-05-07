@@ -1,0 +1,48 @@
+
+<html>
+<head>   
+<script src="js.cookie.min.js"></script>
+</head>
+<body>
+    <div id="blah"></div>
+    <div id="money"></div>
+    <input type="text" id="input1"></input>
+</body>
+<script>
+    console.log("Cookies is:", Cookies.get());
+    function set_vals(){
+        if (Cookies.get("money")){
+            money = parseInt(Cookies.get("money"));
+        }
+        else {
+            Cookies.set("money", 0);
+            money = 0;
+        }
+    }
+    function set_cookie(){
+        console.log("Cookies is:", Cookies.get());
+        Cookies.set("money", parseInt(money), { expires: 7 });
+    }
+    console.log("Cookies is:", typeof Cookies);
+    set_vals();
+    let blah = Cookies.get();
+    setInterval(function() {
+        money += 1;
+        document.getElementById("money").innerHTML = money;
+    }, 100);
+    setInterval(set_cookie, 1000);
+    // set blah div to outout of cookies.get()
+    document.getElementById("blah").innerHTML = JSON.stringify(blah);
+    // if hit enter in text box, set cookie to value of input box
+    document.getElementById("input1").addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+            newdata = JSON.parse(document.getElementById("input1").value);
+            for (key in newdata){
+                Cookies.set(key, newdata[key]);
+            }
+            money = parseInt(Cookies.get("money"));
+            console.log(Cookies.get());
+        }
+    });
+</script>
+</html>
