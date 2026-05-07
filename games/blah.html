@@ -27,10 +27,10 @@
     set_vals();
     let blah = Cookies.get();
     setInterval(function() {
-        money += 1;
+        money += 10;
         document.getElementById("money").innerHTML = money;
-    }, 100);
-    setInterval(set_cookie, 1000);
+    }, 1000);
+    setInterval(set_cookie, 5000);
     // set blah div to outout of cookies.get()
     document.getElementById("blah").innerHTML = JSON.stringify(blah);
     // if hit enter in text box, set cookie to value of input box
