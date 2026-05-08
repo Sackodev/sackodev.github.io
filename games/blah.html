@@ -16,14 +16,16 @@
         }
         else {
             Cookies.set("money", 0);
-            Cookies.set("time", new Date().getTime() / 1000, { expires: 200 });
+            thetime = Math.floor(new Date().getTime() / 1000);
+            Cookies.set("time", thetime, { expires: 200 });
             money = 0;
         }
     }
     function set_cookie(){
         console.log("Cookies is:", Cookies.get());
         Cookies.set("money", parseInt(money), { expires: 200 });
-        Cookies.set("time", new Date().getTime() / 1000, { expires: 200 });
+        thetime = Math.floor(new Date().getTime() / 1000);
+        Cookies.set("time", thetime, { expires: 200 });
     }
     console.log("Cookies is:", typeof Cookies);
     set_vals();
