@@ -16,14 +16,14 @@
         }
         else {
             Cookies.set("money", 0);
-            Cookies.set("time", Date.now().toUTCString());
+            Cookies.set("time", new Date().toUTCString());
             money = 0;
         }
     }
     function set_cookie(){
         console.log("Cookies is:", Cookies.get());
         Cookies.set("money", parseInt(money), { expires: 200 });
-        Cookies.set("time", Date.now().toUTCString());
+        Cookies.set("time", new Date().toUTCString());
     }
     console.log("Cookies is:", typeof Cookies);
     set_vals();
